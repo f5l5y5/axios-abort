@@ -1,6 +1,6 @@
 {
 	"name": "@sunrisecn/axios-abort",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "axios cancel duplicate request",
 	"module": "dist/index.js",
 	"type": "module",
@@ -8,7 +8,7 @@
 		"dist"
 	],
 	"scripts": {
-		"build": "rimraf dist && esbuild src/index.ts --bundle --outfile=dist/index.js",
+		"build": "rimraf dist && esbuild src/index.ts --bundle --outfile=dist/index.js --format=esm",
 		"changeset": "changeset",
 		"version": "changeset version",
 		"release": "changeset publish"
