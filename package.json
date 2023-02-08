@@ -1,0 +1,32 @@
+{
+	"name": "@sunrisecn/axios-abort",
+	"version": "1.0.0",
+	"description": "axios cancel duplicate request",
+	"module": "dist/index.js",
+	"type": "module",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "rimraf dist && esbuild src/index.ts --bundle --outfile=dist/index.js",
+		"changeset": "changeset",
+		"version": "changeset version",
+		"release": "changeset publish"
+	},
+	"keywords": [
+		"axios",
+		"cancel duplicate"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/f5l5y5/axios-abort"
+	},
+	"homepage": "https://github.com/f5l5y5/axios-abort/blob/main/README.md",
+	"author": "yinuo",
+	"license": "MIT",
+	"devDependencies": {
+		"@changesets/cli": "^2.26.0",
+		"esbuild": "^0.17.6",
+		"rimraf": "^4.1.2"
+	}
+}
