@@ -1,6 +1,6 @@
 {
 	"name": "@sunrisecn/axios-abort",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "axios cancel duplicate request",
 	"module": "dist/index.js",
 	"types": "dist/index.d.ts",

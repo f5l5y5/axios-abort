@@ -1,5 +1,11 @@
 # @sunrisecn/axios-abort
 
+## 1.0.4
+
+### Patch Changes
+
+- modify readme
+
 ## 1.0.3
 
 ### Patch Changes
