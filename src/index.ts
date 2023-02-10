@@ -1,5 +1,9 @@
+type TKey = {
+	url: string
+	method: string
+}
 class PendStack {
-	private pendingMap: Map<string, AbortController[]> | Map<any, any>
+	private pendingMap: Map<string, AbortController[]>
 	constructor() {
 		this.pendingMap = new Map()
 	}
@@ -9,7 +13,7 @@ class PendStack {
 		const controller = new AbortController()
 		const controllerList: AbortController[] = []
 		if (this.pendingMap.has(key)) {
-			this.pendingMap.get(key).push(controller)
+			this.pendingMap.get(key)?.push(controller)
 		} else {
 			controllerList.push(controller)
 			this.pendingMap.set(key, controllerList)
@@ -20,9 +24,8 @@ class PendStack {
 	public judge({ url, method }: TKey) {
 		const key = `${url}-${method}`
 		const controllerList = this.pendingMap.get(key)
-		if (controllerList.length > 1) {
-			controllerList[0].abort()
-			controllerList.shift()
+		if (Array.isArray(controllerList) && controllerList.length > 1) {
+			controllerList?.shift()?.abort()
 		}
 	}
 
