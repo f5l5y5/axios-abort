@@ -5,7 +5,8 @@
 ### Using npm:
 
 ```js
- npm install axios-abort --save
+ npm install @sunrisecn/axios-abort --save
+	yarn add @sunrisecn/axios-abort
 ```
 
 ### Usage:
