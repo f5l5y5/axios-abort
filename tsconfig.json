@@ -9,7 +9,6 @@
 			"ESNext",
 			"DOM"
 		],
-		"types": [] // 导入指定类型包
 	},
 	"include": [
 		"src",

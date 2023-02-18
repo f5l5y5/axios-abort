@@ -1,5 +1,11 @@
 # @sunrisecn/axios-abort
 
+## 1.0.5
+
+### Patch Changes
+
+- add lint
+
 ## 1.0.4
 
 ### Patch Changes
