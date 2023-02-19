@@ -32,6 +32,13 @@ class PendStack {
   public remove({ url, method }: TKey) {
     this.pendingMap.delete(`${url}-${method}`)
   }
+
+  public removeAll() {
+    this.pendingMap.forEach((controllerList) => {
+      controllerList.shift()?.abort()
+    })
+    this.pendingMap.clear()
+  }
 }
 
 export default new PendStack()

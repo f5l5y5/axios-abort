@@ -40,3 +40,16 @@ axios.interceptors.response.use(
 )
 
 ```
+
+### API
+
+```js
+- add  
+	- add AbortSignal to every request 
+- judge
+	- judge whether the cancellation conditions are met
+- remove
+	- remove url after success or failure
+- removeAll
+	- removeAll url 
+```

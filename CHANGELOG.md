@@ -1,5 +1,11 @@
 # @sunrisecn/axios-abort
 
+## 1.1.0
+
+### Minor Changes
+
+- add removeAll api
+
 ## 1.0.7
 
 ### Patch Changes
