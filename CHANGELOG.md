@@ -1,5 +1,11 @@
 # @sunrisecn/axios-abort
 
+## 1.1.1
+
+### Patch Changes
+
+- change tsconfig
+
 ## 1.1.0
 
 ### Minor Changes
