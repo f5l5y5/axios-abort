@@ -24,8 +24,7 @@ const axios = axios.create(config)
 
 axios.interceptors.request.use(
 	config => {
-		config.signal = abort.add({ url: config.url, method: config.method })
-		abort.judge({ url: config.url, method: config.method })
+		abort.judge(config)
 		return config
 	},
 	error => Promise.reject(error)
@@ -33,7 +32,7 @@ axios.interceptors.request.use(
 
 axios.interceptors.response.use(
 	response => {
-		abort.remove({ url: response.config.url, method: response.config.method })
+		abort.remove(config)
 		return response
 	},
 	error => Promise.reject(error)
@@ -44,8 +43,6 @@ axios.interceptors.response.use(
 ### API
 
 ```js
-- add  
-	- add AbortSignal to every request 
 - judge
 	- judge whether the cancellation conditions are met
 - remove

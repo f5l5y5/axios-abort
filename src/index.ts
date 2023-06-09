@@ -1,15 +1,12 @@
-type TKey = {
-  url: string
-  method: string
-}
+import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios'
+
 class PendStack {
   public pendingMap: Map<string, AbortController[]>
   constructor() {
     this.pendingMap = new Map()
   }
 
-  public add({ url, method }: TKey): AbortSignal {
-    const key = `${url}-${method}`
+  _add(key: string): AbortSignal {
     const controller = new AbortController()
     const controllerList: AbortController[] = []
     if (this.pendingMap.has(key)) {
@@ -21,15 +18,19 @@ class PendStack {
     return controller.signal
   }
 
-  public judge({ url, method }: TKey) {
+  public judge(config: InternalAxiosRequestConfig) {
+    const { url, method } = config
     const key = `${url}-${method}`
+    // create AbortController
+    config.signal = this._add(key)
     const controllerList = this.pendingMap.get(key)
     if (Array.isArray(controllerList) && controllerList.length > 1) {
       controllerList?.shift()?.abort()
     }
   }
 
-  public remove({ url, method }: TKey) {
+  public remove(response: AxiosResponse) {
+    const { url, method } = response.config
     this.pendingMap.delete(`${url}-${method}`)
   }
 
