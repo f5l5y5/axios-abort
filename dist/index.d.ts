@@ -1,9 +1,9 @@
-import type { AxiosRequestConfig, AxiosResponse } from 'axios'
+import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios'
 declare class PendStack {
   pendingMap: Map<string, AbortController[]>
   constructor()
   _add(key: string): AbortSignal
-  judge(config: AxiosRequestConfig): void
+  judge(config: InternalAxiosRequestConfig): void
   remove(response: AxiosResponse): void
   removeAll(): void
 }
