@@ -1,5 +1,11 @@
 # @sunrisecn/axios-abort
 
+## 1.2.4
+
+### Patch Changes
+
+- 添加 cdn 加速
+
 ## 1.2.3
 
 ### Patch Changes
