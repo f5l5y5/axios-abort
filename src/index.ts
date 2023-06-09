@@ -1,4 +1,4 @@
-import type { InternalAxiosRequestConfig, AxiosResponse } from 'axios'
+import type { AxiosRequestConfig, AxiosResponse } from 'axios'
 
 class PendStack {
   public pendingMap: Map<string, AbortController[]>
@@ -18,7 +18,7 @@ class PendStack {
     return controller.signal
   }
 
-  public judge(config: InternalAxiosRequestConfig) {
+  public judge(config: AxiosRequestConfig) {
     const { url, method } = config
     const key = `${url}-${method}`
     // create AbortController

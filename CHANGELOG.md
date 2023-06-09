@@ -1,5 +1,11 @@
 # @sunrisecn/axios-abort
 
+## 1.2.1
+
+### Patch Changes
+
+- repire type
+
 ## 1.2.0
 
 ### Minor Changes

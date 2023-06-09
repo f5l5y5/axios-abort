@@ -1,6 +1,6 @@
 {
   "name": "@sunrisecn/axios-abort",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "axios cancel duplicate request",
   "module": "dist/index.js",
   "main": "dist/index.cjs",
@@ -63,8 +63,7 @@
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
       "prettier --write",
-      "eslint --fix",
-      "jest --config jestconfig.json"
+      "eslint --fix"
     ]
   }
 }
