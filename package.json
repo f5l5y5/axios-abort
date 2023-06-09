@@ -1,6 +1,6 @@
 {
   "name": "@sunrisecn/axios-abort",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "axios cancel duplicate request",
   "module": "dist/index.js",
   "main": "dist/index.cjs",
@@ -9,6 +9,13 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
     "build": "rimraf dist && rollup -c",
     "prettier": "prettier --write \"src/**/*.ts\"",
@@ -21,6 +28,7 @@
     "version": "changeset version",
     "release": "changeset publish"
   },
+  "sideEffects": false,
   "engines": {
     "node": ">14"
   },

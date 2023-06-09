@@ -1,5 +1,11 @@
 # @sunrisecn/axios-abort
 
+## 1.2.3
+
+### Patch Changes
+
+- add sideEffect
+
 ## 1.2.2
 
 ### Patch Changes
